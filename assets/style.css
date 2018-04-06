@@ -1,0 +1,32 @@
+/* BEGIN CSS*/
+.jumbotron-fluid{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    background-color: seashell;
+    color: darkgray;
+    text-align: center;
+}
+.card{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.card-header{
+    background-color:peachpuff;
+    color: darkgray;
+    text-align: left;
+}
+.card-body{
+    text-align: center;
+}
+.input-body{
+    padding: 10px;
+}
+.btn-primary{
+    background-color: peachpuff;
+    border-color:peachpuff;
+}
+
+
+/* END CSS*/
