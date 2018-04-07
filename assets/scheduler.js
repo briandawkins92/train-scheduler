@@ -36,10 +36,14 @@ $(document).ready(function () {
       trainTime: trainTime,
       minutesAway: frequency
     }, function (errorObject) {
-      console.log("brian made a mistake");
 
     });
-
+ 
+    $("#train-name").empty();
+    $("#destination").empty();
+    $("#trainTime").empty();
+    $("#frequency").empty();
+  })
 // var scheduleInfo = [trainName, destination, frequency, nextArrival, minutesAway];
 
   database.ref().on("child_added", function(childSnapshot){
@@ -51,16 +55,18 @@ $(document).ready(function () {
 
   $(".table").append("<tbody><td scope='col'>" + childSnapshot.val().trainName +
 "</td><td scope='col'>" + childSnapshot.val().destination + 
-"</td><td scope='col'>" + childSnapshot.val().frequency + 
+"</td><td scope='col'>" + childSnapshot.val().frequency + " Minutes" +
 "</td><td scope='col'>" + childSnapshot.val().nextArrival +
-"</td><td scope='col'>" + childSnapshot.val().minutesAway + 
+"</td><td scope='col'>" + childSnapshot.val().minutesAway + " Minutes" + 
 "</td></tbody>");
+
+
   
     }, function (errorObject){
       console.log("errors handled:" + errorObject.code);
     });
 
-  })
+
 })
 /* END JAVASCRIPT*/
 
