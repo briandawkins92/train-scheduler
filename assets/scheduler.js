@@ -39,10 +39,6 @@ $(document).ready(function () {
 
     });
  
-    $("#train-name").empty();
-    $("#destination").empty();
-    $("#trainTime").empty();
-    $("#frequency").empty();
   })
 // var scheduleInfo = [trainName, destination, frequency, nextArrival, minutesAway];
 
@@ -60,6 +56,10 @@ $(document).ready(function () {
 "</td><td scope='col'>" + childSnapshot.val().minutesAway + " Minutes" + 
 "</td></tbody>");
 
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#trainTime").val("");
+    $("#frequency").val("");
 
   
     }, function (errorObject){
