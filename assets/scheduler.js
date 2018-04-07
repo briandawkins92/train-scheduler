@@ -41,26 +41,29 @@ $(document).ready(function () {
     });
 
 // var scheduleInfo = [trainName, destination, frequency, nextArrival, minutesAway];
-var databaseRef = database.ref();
-  databaseRef.on("child_added", function(snap){
-    $(".form-control").text("");
-    // for (i = 0; i < scheduleInfo.length; i++) {
-    var TD = $("<td>")
-    TD.attr("scope", "col");
-    TD.text(trainName)
-    TD.text(destination);
-   
-    // TD.text(scheduleInfo[i]);
-    $(".table").append(TD);
-    console.log(TD);
-    console.log(scheduleInfo);
-  
-  
-  // }
+
+  database.ref().on("child_added", function(childSnapshot){
+    console.log(childSnapshot.val().trainName);
+    console.log(childSnapshot.val().frequency);
+    console.log(childSnapshot.val().nextArrival);
+    console.log(childSnapshot.val().trainTime);
+
+  $(".table").append("<tbody><td scope='col'>" + childSnapshot.val().trainName +
+"</td><td scope='col'>" + childSnapshot.val().destination + 
+"</td><td scope='col'>" + childSnapshot.val().frequency + 
+"</td><td scope='col'>" + childSnapshot.val().nextArrival +
+"</td><td scope='col>" + childSnapshot.val().minutesAway + "</td></tbody>");
+
+
 
   
-    })
+    }, function (errorObject){
+      console.log("errors handled:" + errorObject.code);
+    });
 
   })
 })
 /* END JAVASCRIPT*/
+
+
+  
