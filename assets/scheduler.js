@@ -47,15 +47,14 @@ $(document).ready(function () {
     console.log(childSnapshot.val().frequency);
     console.log(childSnapshot.val().nextArrival);
     console.log(childSnapshot.val().trainTime);
+    console.log(childSnapshot.val().minutesAway);
 
   $(".table").append("<tbody><td scope='col'>" + childSnapshot.val().trainName +
 "</td><td scope='col'>" + childSnapshot.val().destination + 
 "</td><td scope='col'>" + childSnapshot.val().frequency + 
 "</td><td scope='col'>" + childSnapshot.val().nextArrival +
-"</td><td scope='col>" + childSnapshot.val().minutesAway + "</td></tbody>");
-
-
-
+"</td><td scope='col'>" + childSnapshot.val().minutesAway + 
+"</td></tbody>");
   
     }, function (errorObject){
       console.log("errors handled:" + errorObject.code);
